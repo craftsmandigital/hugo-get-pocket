@@ -1,0 +1,10 @@
+{{ define "main" }}
+<h1>Dette er terms.html</h1>
+<div class='container list-container'>
+  <ul>
+    {{ range .Data.Terms.Alphabetical }}
+            <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> {{ .Count }}</li>
+    {{ end }}
+</ul>
+</div>
+    {{ end }}

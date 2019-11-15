@@ -1,0 +1,11 @@
+{{ define "main" }}
+
+<h1>Dette er index/list.html</h1>
+<h1>{{ .Title }}</h1>
+{{ range .Pages.ByPublishDate.Reverse }}
+<p>
+  <a class="has-text-danger" href="{{ .RelPermalink }}">{{ .Title }}</a>
+</p>
+{{ end }}
+
+{{ end }}

@@ -1,0 +1,6 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "My Get pocekt bookmarks"
+
+[params]
+  homeText = "You just made a Hugo blog from scratch."

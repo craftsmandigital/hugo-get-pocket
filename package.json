@@ -1,0 +1,23 @@
+{
+  "name": "hugo-get-pocket",
+  "version": "1.0.0",
+  "description": "This is a Hugo project that view bookmars from my get-pocket app. Using get-pocket api to generate json to use in website",
+  "main": "index.js",
+  "dependencies": {
+    "bulma": "^0.8.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/craftsmandigital/hugo-get-pocket.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/craftsmandigital/hugo-get-pocket/issues"
+  },
+  "homepage": "https://github.com/craftsmandigital/hugo-get-pocket#readme"
+}
