@@ -1,0 +1,48 @@
+{{ define "main" }}
+
+<h1>Dette er taxonomy.html</h1>
+<h1>{{ .Title }}</h1>
+
+<div class="container is-fullhd">
+  {{ range where .Site.Data.pocketdata "tag" $.Title }}
+  <a>{{ .count }}</a>
+  <div class="columns is-multiline is-mobile">
+    {{ range .items }}
+
+    <div class="column my-column is-3-tablet is-6-mobile is-2-widescreen">
+      <div class="card">
+        <header class="card-header">
+          <a class="card-header-title" href="{{ .given_url }}"
+            >{{ .given_title }}</a
+          ><br />
+          <a href="#" class="card-header-icon" aria-label="more options">
+            <span class="icon">
+              <i class="fas fa-angle-down" aria-hidden="true"></i>
+            </span>
+          </a>
+        </header>
+        <div class="card-content">
+          <div class="content">
+            <p>
+              {{ .excerpt | truncate 200 }}
+            </p>
+
+            <br />
+            <time>{{ dateFormat "Jan 2, 2006" .time_updated }}</time>
+          </div>
+        </div>
+      </div>
+        {{/*  <div class="my-down">  */}}
+        <div class="my-down">
+          <a href="#" class="card-footer-item">Save</a>
+          <a href="#" class="card-footer-item">Edit</a>
+          <a href="#" class="card-footer-item">Delete</a>
+        </div>
+
+    </div>
+    {{ end }}
+  </div>
+  {{/* {{ range .Site.Data.pocketdata }} */}} {{ end }}
+</div>
+
+{{ end }}
