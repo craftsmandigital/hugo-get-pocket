@@ -3,23 +3,28 @@
 <h1>Dette er taxonomy.html</h1>
 <h1>{{ .Title }}</h1>
 
-  {{/*  {{ range .Site.Data.pocketdata }}  */}}
-  {{ range where .Site.Data.pocketdata "tag" $.Title }}
-    <a>{{ .count  }}</a>
-    {{ range .items }}
-      <a href="{{ .given_url }}">{{ .given_title }} --   {{ .time_updated }}</a><br>
-  
-    {{ end  }}
-  {{ end  }} 
 
 
-{{/* {{ range $.Site.Data.pocket-data.bass }} */}}
 
+<div class="container is-fullhd">
 
-{{ range .Pages.ByPublishDate.Reverse }}
-<p>
-  <a class="has-text-danger" href="{{ .RelPermalink }}">{{ .Title }}</a>
-</p>
+{{ range where .Site.Data.pocketdata "tag" $.Title }}
+  <a>{{ .count }}</a>
+<div class="columns is-multiline is-mobile">
+  {{ range .items }}
+  <div class="column is-3-tablet is-6-mobile is-2-desktop">
+  {{/*  <div class="column is-one-fifth-desktop">  */}}
+    <a href="{{ .given_url }}">{{ .given_title }} -- {{ .time_updated }}</a><br />
+  </div>
+  {{ end }} 
+</div>
+{{/* {{ range .Site.Data.pocketdata }} */}} 
+
 {{ end }}
+</div>
+
+
+
+
 
 {{ end }}
