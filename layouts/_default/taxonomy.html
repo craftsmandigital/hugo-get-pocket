@@ -36,9 +36,7 @@
               </p>
               <div class="card-footer-item tags is-paddingless">
                   {{range .tags }}
-                  {{ $tagColor := replaceRE "[^0-9]?" "" (. | sha1) }}
-                  {{ $tagColor = index $.Site.Params.back_colors (int (substr $tagColor 1 1)) }}
-
+                  {{ $tagColor := partial "getTagColor.html" .}}
                     <span class="tag is-{{ $tagColor }}">{{ . }}</span>
                   {{ end }}
               </div>
