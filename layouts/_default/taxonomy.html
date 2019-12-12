@@ -9,12 +9,15 @@
   <a>{{ .count }}</a>
   <div class="columns is-multiline is-mobile is-gapless">
     {{ range .items }}
-
+    {{/*  {{ $colour := printf "is-%s" (index $.Site.Params.back_colors (mod .item_id 10))  }}  */}}
+    {{ $backColour := printf "has-background-%s" (index $.Site.Params.back_colors (mod .item_id 10))  }}
+    {{ $textColour := printf "has-text-%s"       (index $.Site.Params.text_colors (mod .item_id 10))  }}
+{{/*  <p>{{ $textColour }}</p>  */}}
     <div class="column my-column is-3-tablet is-6-mobile is-2-widescreen">
           <div class="card card-equal-height">
             <div class="card-content">
-            <div class="box is-marginless is-paddingless has-background-primary">
-              <a class="has-text-centered" href="{{ .given_url }}">{{ .given_title }}</a>
+            <div class="box is-marginless is-paddingless {{ $backColour }} {{ $textColour }}">
+              <a class="has-text-centered {{ $textColour }}" href="{{ .given_url }}">{{ .given_title }}</a>
               </div>
               <div class="content">
                 <p class="is-size-7">{{ .excerpt | truncate 200 }}</p>

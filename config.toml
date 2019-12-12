@@ -4,3 +4,7 @@ title = "My Get pocekt bookmarks"
 
 [params]
   homeText = "You just made a Hugo blog from scratch."
+  back_colors = [ "white", "black", "light", "dark",  "primary", "link",  "info",  "success", "warning", "danger" ]
+  text_colors = [ "black", "white", "black", "white", "white",   "white", "white", "white",   "black",   "white" ]
+
+
