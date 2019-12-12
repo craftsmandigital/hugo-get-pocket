@@ -9,7 +9,7 @@
 <div class="container is-fullhd">
   {{ range where .Site.Data.pocketdata "tag" $.Title }}
   <a>{{ .count }}</a>
-  <div class="columns is-multiline is-mobile is-gapless">
+  <div class="columns is-multiline is-mobile is-variable is-1">
     {{ range .items }}
     {{/*  {{ $backColour := printf "has-background-%s" (index $.Site.Params.back_colors (mod .item_id 10))  }}  */}}
     {{ $backColour := printf "is-%s" (index $.Site.Params.back_colors (mod .item_id 10))  }}
