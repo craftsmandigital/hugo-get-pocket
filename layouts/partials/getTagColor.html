@@ -1,0 +1,7 @@
+
+
+
+{{ $tagColor := replaceRE "[^0-9]?" "" (. | sha1) }}
+{{ $tagColor = index site.Params.back_colors (int (substr $tagColor 1 1)) }}
+{{ return $tagColor }}
+
