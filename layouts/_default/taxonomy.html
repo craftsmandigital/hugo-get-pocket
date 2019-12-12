@@ -3,33 +3,43 @@
 
 <h1>Dette er taxonomy.html</h1>
 <h1>{{ .Title }}</h1>
-
+<p>Hello world = {{ "Hello world" | base64Encode }}</p>
 <div class="container is-fullhd">
   {{ range where .Site.Data.pocketdata "tag" $.Title }}
   <a>{{ .count }}</a>
   <div class="columns is-multiline is-mobile is-gapless">
     {{ range .items }}
-    {{/*  {{ $colour := printf "is-%s" (index $.Site.Params.back_colors (mod .item_id 10))  }}  */}}
-    {{ $backColour := printf "has-background-%s" (index $.Site.Params.back_colors (mod .item_id 10))  }}
+    {{/*  {{ $backColour := printf "has-background-%s" (index $.Site.Params.back_colors (mod .item_id 10))  }}  */}}
+    {{ $backColour := printf "is-%s" (index $.Site.Params.back_colors (mod .item_id 10))  }}
     {{ $textColour := printf "has-text-%s"       (index $.Site.Params.text_colors (mod .item_id 10))  }}
 {{/*  <p>{{ $textColour }}</p>  */}}
     <div class="column my-column is-3-tablet is-6-mobile is-2-widescreen">
           <div class="card card-equal-height">
             <div class="card-content">
-            <div class="box is-marginless is-paddingless {{ $backColour }} {{ $textColour }}">
-              <a class="has-text-centered {{ $textColour }}" href="{{ .given_url }}">{{ .given_title }}</a>
-              </div>
+              <a class="has-text-centered" href="{{ .given_url }}">
+            <div class="box is-marginless is-paddingless notification {{ $backColour }}">
+              <h1 class="{{ $backColour }}">{{ .given_title }}</h1>
+
+            </div>
+          </a>
               <div class="content">
                 <p class="is-size-7">{{ .excerpt | truncate 200 }}</p>
               </div>
             </div>
             <div class="card-footer">
               <p class="card-footer-item">
-                <span>Share on <a href="#"> Facebook</a></span>
+                <span>
+                              <time>{{ dateFormat "Jan 2, 2006" .time_updated }}</time>
+                </span>
               </p>
-              <p class="card-footer-item">
-                <span>View on <a href="#"> Twitter</a></span>
-              </p>
+              <div class="card-footer-item tags is-paddingless">
+                  {{range .tags }}
+                  {{ $tagColor := replaceRE "[^0-9]?" "" (. | sha1) }}
+                  {{ $tagColor = index $.Site.Params.back_colors (int (substr $tagColor 1 1)) }}
+
+                    <span class="tag is-{{ $tagColor }}">{{ . }}</span>
+                  {{ end }}
+              </div>
             </div>
           </div>
     </div>
