@@ -7,17 +7,17 @@
 <div class="container is-fullhd">
   {{ range where .Site.Data.pocketdata "tag" $.Title }}
   <a>{{ .count }}</a>
-  <div class="columns is-multiline is-mobile">
+  <div class="columns is-multiline is-mobile is-gapless">
     {{ range .items }}
 
     <div class="column my-column is-3-tablet is-6-mobile is-2-widescreen">
           <div class="card card-equal-height">
             <div class="card-content">
-            <div class="has-background-primary">
+            <div class="box is-marginless is-paddingless has-background-primary">
               <a class="has-text-centered" href="{{ .given_url }}">{{ .given_title }}</a>
               </div>
               <div class="content">
-                <p>{{ .excerpt | truncate 200 }}</p>
+                <p class="is-size-7">{{ .excerpt | truncate 200 }}</p>
               </div>
             </div>
             <div class="card-footer">
