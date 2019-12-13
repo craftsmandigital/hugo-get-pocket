@@ -4,12 +4,11 @@
 
 
 {{ $tcolor := partial "getTagColor.html" .Title }}
-<div class="has-background-{{ $tcolor }}">
+<article class="hero is-{{ $tcolor }}">
   {{/*  <h1>{{ .Title }}</h1>  */}}
   {{/*  <div class="container is-fullhd">  */}}
       {{ partial "getTagList.html" . }}
   {{ range where .Site.Data.pocketdata "tag" $.Title }}
-  <a>{{ .count }}</a>
   <div class="columns is-multiline is-mobile is-variable is-1">
     {{ range .items }}
     {{/*  {{ $backColour := printf "has-background-%s" (index $.Site.Params.back_colors (mod .item_id 10))  }}  */}}
@@ -50,5 +49,5 @@
   {{ partial "getTagList.html" . }}
 </div>
 
-{{/*  </div>  */}}
+</article>
 {{ end }}
