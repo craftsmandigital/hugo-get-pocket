@@ -1,4 +1,4 @@
-baseURL = "http://example.org/"
+baseURL = "https://get-pocket.netlify.com/"
 languageCode = "en-us"
 title = "My Get pocekt bookmarks"
 
