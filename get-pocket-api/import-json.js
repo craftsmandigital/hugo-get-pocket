@@ -17,7 +17,17 @@ const GetPocket = require("node-getpocket");
 //     consumer_key: 'YOUR CONSUMER KEY',
 //     access_token: 'YOUR ACCESS TOKEN'
 // };
-const config = require("./credentials.json");
+
+
+
+// const config = require("./credentials.json");
+
+// export CONSUMER_KEY=<your secret key>
+// export ACCESS_TOKEN=<your secret token>
+const config = { 
+  consumer_key: process.env.CONSUMER_KEY,
+  access_token: process.env.ACCESS_TOKEN
+}
 // module.exports.importJSONfile = function () {
 
 const params = {
