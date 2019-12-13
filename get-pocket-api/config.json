@@ -1,0 +1,22 @@
+{
+  "UNTAGED": "untaged",
+  "LATEST_TAGS": "latest tags",
+  "LATEST_TAGS_COUNT": 20,
+  "TAGS_TO_IGNORE": [
+    "nav",
+    "hide",
+    "job",
+    "jobb",
+    "favorits job",
+    "helse",
+    "job-har-sokt",
+    "jobb-har-sokt",
+    "jobb-ikke-relevant",
+    "midlertidig",
+    "personal",
+    "uft"
+  ],
+  "markdown_template":  "./all-my-tags-template.md",
+  "markdown_output":  "../content/bookmarks/all-my-tags.md",
+  "output": "../data/pocketdata.json"
+}

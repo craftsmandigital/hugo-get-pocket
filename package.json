@@ -4,7 +4,8 @@
   "description": "This is a Hugo project that view bookmars from my get-pocket app. Using get-pocket api to generate json to use in website",
   "main": "index.js",
   "dependencies": {
-    "bulma": "^0.8.0"
+    "bulma": "^0.8.0",
+    "node-getpocket": "^1.0.0"
   },
   "devDependencies": {},
   "scripts": {
