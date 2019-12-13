@@ -1,0 +1,24 @@
+
+<div class="field is-grouped is-grouped-multiline">
+{{ range .Site.Data.pocketdata }}
+
+{{ $tc := partial "getTagColor.html" .tag }}
+
+<div class="control">
+{{ if eq .tag $.Title }}
+    <div class="tags has-addons are-large">
+      <span class="tag is-{{ $tc }} is-light">{{ .tag | upper }}</span>
+      <span class="tag is-{{ $tc }} is-light">{{ .count }}</span>
+    </div>
+    {{ else }}
+    {{ $tlink := ($.Site.GetPage "taxonomy" ( printf "tags/%s" (replace .tag " " "-") )).Permalink }}
+    <a href="{{ $tlink }}">
+      <div class="tags has-addons">
+        <span class="tag is-{{ $tc }}">{{ .tag }}</span>
+        <span class="tag is-{{ $tc }} is-light">{{ .count }}</span>
+      </div>
+    </a>
+    {{ end }}
+  </div>
+  {{ end }}
+</div>

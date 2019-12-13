@@ -1,12 +1,13 @@
 {{/* https://codepen.io/smarius01/pen/Yvqzbq?editors=1000 */}}
 {{ define "main" }}
 
+
+
 {{ $tcolor := partial "getTagColor.html" .Title }}
 <div class="has-background-{{ $tcolor }}">
-<h1>Dette er taxonomy.html</h1>
-<h1>{{ .Title }}</h1>
-<p>Hello world = {{ "Hello world" | base64Encode }}</p>
-<div class="container is-fullhd">
+  {{/*  <h1>{{ .Title }}</h1>  */}}
+  {{/*  <div class="container is-fullhd">  */}}
+      {{ partial "getTagList.html" . }}
   {{ range where .Site.Data.pocketdata "tag" $.Title }}
   <a>{{ .count }}</a>
   <div class="columns is-multiline is-mobile is-variable is-1">
@@ -46,7 +47,8 @@
     {{ end }}
   </div>
   {{/* {{ range .Site.Data.pocketdata }} */}} {{ end }}
+  {{ partial "getTagList.html" . }}
 </div>
 
-</div>
+{{/*  </div>  */}}
 {{ end }}
