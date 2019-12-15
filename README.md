@@ -62,7 +62,7 @@ The application is build of three parts witch is ran in given order. Look at the
 
 | File                                                        | Task                                      | Desription                                                   |
 | ----------------------------------------------------------- | ----------------------------------------- | ------------------------------------------------------------ |
-| [/get-pocket-api/index.js](./get-pocket-api/index.js)       | Read from Pocket API                      | - Reads data from pocket API using the credentials.<br />- Build the json file [./data/pocketdata.json](/data/pocketdata.json) inside Hugo data folder. The json file structure is tailored to be used in Hugo with no further formating. |
+| [/get-pocket-api/index.js](./get-pocket-api/index.js)       | Read from Pocket API                      | - Reads data from pocket API using the credentials.<br />- Build the json file [/data/pocketdata.json](/data/pocketdata.json) inside Hugo data folder. The json file structure is tailored to be used in Hugo with no further formating. |
 | [/get-pocket-api/markdown.js](./get-pocket-api/markdown.js) | Generate tags(taxonomies) for use in Hugo | - Using the json file generated in previous step to collect all tags in a list.<br /> - The list is used to generate all the tags(taxonomy) for the Hugo site<br /> - Generating a markdown file with all the tags in the list [/content/bookmarks/all-my-tags.md](./content/bookmarks/all-my-tags.md) |
-| [Hugo site](./../../)                                       | Hugo site                                 | At last a Hugo site is generated.                            |
+| / ([Hugo site](./../../))                                   | Hugo site                                 | At last a Hugo site is generated.                            |
 
