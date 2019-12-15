@@ -35,7 +35,7 @@ To get your Pocket content, you need to generate an consumer_key and an access_t
 
 ## Tags to ignore
 
-You can setup tags to be ignored in the import. This solution is totaly public. If you have sensitive information that not could be imported. You can do it this way. The file [/get-pocket-api/config.json](/get-pocket-api/config.json) contains the variable TAGS_TO_IGNORE. Here is a sample
+You can setup tags to be ignored in the import. This solution is totaly public. If you have sensitive information that not could be imported. You can do it this way. The file [/get-pocket-api/config.json](./get-pocket-api/config.json) contains the variable TAGS_TO_IGNORE. Here is a sample
 
 ```json
  "TAGS_TO_IGNORE": [
@@ -53,6 +53,16 @@ There are two special tags witch you cant find in your pocket account:
 
 | Tag         | Description                                                  |
 | ----------- | ------------------------------------------------------------ |
-| new content | Inside this tag you can find the latest tags added to your pocket list. You can edit the amount of bookmarks that could be inside this tag. Default is 20 bookmarks. You can sett the amount of bookmarks in th variable LATEST_TAGS_COUNT inside the [/get-pocket-api/config.json](/get-pocket-api/config.json) file |
+| new content | Inside this tag you can find the latest tags added to your pocket list. You can edit the amount of bookmarks that could be inside this tag. Default is 20 bookmarks. You can sett the amount of bookmarks in th variable LATEST_TAGS_COUNT inside the [/get-pocket-api/config.json](./get-pocket-api/config.json) file |
 | stared      | This tag contains all your stared bookmarks from Pocket      |
+
+## Application structure
+
+The application is build of three parts witch is ran in given order. Look at the file [package.json](./package.json), the start script:
+
+| File                                                        | Task                                      | Desription                                                   |
+| ----------------------------------------------------------- | ----------------------------------------- | ------------------------------------------------------------ |
+| [/get-pocket-api/index.js](./get-pocket-api/index.js)       | Read from Pocket API                      | - Reads data from pocket API using the credentials.<br />- Build the json file [./data/pocketdata.json](/data/pocketdata.json) inside Hugo data folder. The json file structure is tailored to be used in Hugo with no further formating. |
+| [/get-pocket-api/markdown.js](./get-pocket-api/markdown.js) | Generate tags(taxonomies) for use in Hugo | - Using the json file generated in previous step to collect all tags in a list.<br /> - The list is used to generate all the tags(taxonomy) for the Hugo site<br /> - Generating a markdown file with all the tags in the list [/content/bookmarks/all-my-tags.md](./content/bookmarks/all-my-tags.md) |
+| [Hugo site](./)                                             | Hugo site                                 | At last a Hugo site is generated.                            |
 
