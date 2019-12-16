@@ -11,16 +11,14 @@
   {{ range where .Site.Data.pocketdata "tag" $.Title }}
   <div class="columns is-multiline is-mobile is-variable is-1">
     {{ range .items }}
-    {{/*  {{ $backColour := printf "has-background-%s" (index $.Site.Params.back_colors (mod .item_id 10))  }}  */}}
-    {{ $backColour := printf "is-%s" (index $.Site.Params.back_colors (mod .item_id 10))  }}
-    {{ $textColour := printf "has-text-%s"       (index $.Site.Params.text_colors (mod .item_id 10))  }}
+    {{ $colour := printf "is-%s" (index $.Site.Params.colors (mod .item_id 10))  }}
 {{/*  <p>{{ $textColour }}</p>  */}}
     <div class="column my-column is-3-tablet is-6-mobile is-2-widescreen">
           <div class="card card-equal-height">
             <div class="card-content">
               <a class="has-text-centered" href="{{ .given_url }}">
-            <div class="box is-marginless is-paddingless notification {{ $backColour }}">
-              <h1 class="{{ $backColour }}">{{ .given_title }}</h1>
+            <div class="box is-marginless is-paddingless notification {{ $colour }}">
+              <h1 class="{{ $colour }}">{{ .given_title }}</h1>
 
             </div>
           </a>

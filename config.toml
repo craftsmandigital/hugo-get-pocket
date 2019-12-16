@@ -1,10 +1,10 @@
 baseURL = "https://get-pocket.netlify.com/"
 languageCode = "en-us"
 title = "My Get pocekt bookmarks"
-
+disableKinds = ["home", "section", "taxonomyTerm", "RSS", "sitemap", "robotsTXT"]
 [params]
   homeText = "You just made a Hugo blog from scratch."
-  back_colors = [ "white", "black", "light", "dark",  "primary", "link",  "info",  "success", "warning", "danger" ]
-  text_colors = [ "black", "white", "black", "white", "white",   "white", "white", "white",   "black",   "white" ]
+  colors = [ "white", "black", "light", "dark",  "primary", "link",  "info",  "success", "warning", "danger" ]
+  # text_coors = [ "black", "white", "black", "white", "white",   "white", "white", "white",   "black",   "white" ]
 
 
