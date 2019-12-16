@@ -1,7 +1,7 @@
 baseURL = "https://get-pocket.netlify.com/"
 languageCode = "en-us"
 title = "My Get pocekt bookmarks"
-disableKinds = ["home", "section", "taxonomyTerm", "RSS", "sitemap", "robotsTXT"]
+disableKinds = ["section", "taxonomyTerm", "RSS", "sitemap", "robotsTXT"]
 [params]
   homeText = "You just made a Hugo blog from scratch."
   colors = [ "white", "black", "light", "dark",  "primary", "link",  "info",  "success", "warning", "danger" ]
