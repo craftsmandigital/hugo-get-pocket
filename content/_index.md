@@ -1,6 +1,6 @@
 
 ---
-title: "All My Tags"
+title: "latest tags"
 date: 2019-11-15T12:41:14+01:00
 draft: false
 layout: taxonomy
