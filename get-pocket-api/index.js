@@ -21,6 +21,7 @@ function main(data) {
 
   // building an easy list to handle for other programs
   let outputList = [];
+  let latestTagsCount = 0;
   objectList.forEach((obj, index) => {
     // If object don't have tags then give it a tag of name UNTAGED constant.
     // else build a beautiful array(tagList) to hold the tags for obj
@@ -39,8 +40,9 @@ function main(data) {
     }
 
     // Creates a special tag for newest bookmarks.
-    if (index < config.LATEST_TAGS_COUNT) {
-      tagList.push(config.LATEST_TAGS);
+    if (latestTagsCount < config.LATEST_TAGS_COUNT) {
+      tagList.unshift(config.LATEST_TAGS)
+      latestTagsCount++;
     }
 
     // Convert from unix date to normal date
