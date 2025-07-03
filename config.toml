@@ -1,4 +1,5 @@
-baseURL = "https://get-pocket.netlify.com/"
+# baseURL = "https://get-pocket.netlify.com/"
+baseURL = "https://hugo-get-pocket.pages.dev/"
 languageCode = "en-us"
 title = "Pocekt bookmarks"
 disableKinds = ["section", "taxonomyTerm", "RSS", "sitemap", "robotsTXT"]
